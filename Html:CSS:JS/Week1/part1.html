@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Part1</title>
+  </head>
+  <body>
+    <h2>Please Enter Your Details For Our Dating Website!</h2>
+    <form action="" method="get">
+      <fieldset>
+        <legend>Your Face</legend>
+        <label for="avatar">Your image:</label>
+        <input type="file" id="avatar" name="avatar" required> 
+        <br>
+        <label for="preview">Image preview:</label>
+        <img id="preview">
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Your General Details</legend>
+        <label for="name">Name: </label>
+        <input type="text" name="name" required>
+        <br>
+        <label for="gender">Gender: </label>
+        <input type="radio" name="male" value="male" required>male 
+        <input type="radio" name="female" value="female" required>female        
+        <br>
+        <label for="age">Age: </label>
+        <input type="number" name="age" value="18" required>
+        <br>
+        <label for="b-day">Date of birth: </label>
+        <input type="date" name="b-day">
+        <br>
+        <label for="color">Favorite color: </label>
+        <input type="color" name="color">
+        <br>
+        <label for="country">Which country: </label>
+          <select name="country">                                         
+            <option value="tw">Taiwan</option>                  
+            <option value="cn">Chian</option>                  
+            <option value="jp">Japan</option>
+            <option value="us">USA</option>
+            <option value="uk">United Kindom</option>
+            <option value="Fn">France</option>              
+          </select>
+        
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend for="indicators">Your Indicators</legend>
+        <label for="height">Height: Short</label>
+        <input type="range" min="0" max="100" name="height"> High
+        <br>
+        <label for="salary">Salary: Poor</label>
+        <input type="range" min="0" max="100" name="salary"> Rich
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend for="contect">Your Contect Information</legend>
+        <label for="email">Email: </label>
+        <input type="email" name="email" required>
+        <br>
+        <label for="mobile">Mobile: </label>
+        <input type="tel" name="mobile">
+        <br>
+        <label for="address">Address: </label>
+        <textarea name="address" rows="3" cols="60"></textarea>
+        <br>
+        <label for="contact">Method to contact you: </label>
+          <input type="checkbox" name="contact_email" value="contact_email">Email
+          <input type="checkbox" name="whatsapp" value="whatsapp">Whatsapp
+          <input type="checkbox" name="inapp" value="inapp">In-app chat
+        
+      </fieldset>
+    <input type="submit" value="submit">   
+    </form>
+
+  </body>
+</html>

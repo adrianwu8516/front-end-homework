@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Color Guessing Game</title>
+    <script>
+      var guessTime = 0;
+      var finished = false;
+      var target = ["black", "blue", "cyan", "gold", "gray", "green", "magenta", "orange", "purple", "red", "white", "yellow"];
+      function opening(){
+        alert("I am thinking one of these colors: \n \n" +
+          target.join() +
+          "\n \n What color am I thinking of?");
+        do_game();
+      }
+
+      function do_game(){
+        answer = Math.random() * target.length;
+        answerNum = Math.floor(answer);
+        answerStr = target[answerNum];
+        alert("For test, the answer is : \n \n" + answerStr);
+
+        while(!finished){
+          guess = prompt("What's your guess this time?");
+          guessNum = target.indexOf(guess);
+          guessTime += 1;
+          finished = check_guess(guessNum);
+        }
+        alert("Congratulation! You have guessed the color! \n \n" +
+              "It took you  " + guessTime + "  guesses to finish the game! \n" +
+              "You can see the color in the background!");
+        document.body.style.backgroundColor = answerStr
+        
+      };
+
+      function check_guess(guessNum){
+        guessStr = target[guessNum]
+        if (guessNum < 0){
+          alert("Sorry, I don't recognize your color. \n \n " + 
+                "Please try again");
+          return false
+        }else if (guessStr < answerStr){
+          alert("Sorry, your guess is not correct! \n \n " + 
+                "Hint: your color is alphabatically lower then mine \n " + 
+                "Please try again!");
+          return false
+        }else if (guessStr > answerStr){
+          alert("Sorry, your guess is not correct! \n \n " + 
+                "Hint: your color is alphabatically higher then mine \n " + 
+                "Please try again!");
+          return false
+        }else{
+          return true
+        }
+      };
+    </script>
+  </head>
+  <body onload="opening()">
+  </body>
+</html>
